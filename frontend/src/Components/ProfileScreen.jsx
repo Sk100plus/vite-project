@@ -21,7 +21,7 @@ const ProfileScreen = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:5000/api/auth/profile/${userInfo._id}`
+          `${process.env.REACT_APP_BACKEND_URL}/api/auth/profile/${userInfo._id}`
         );
         const userData = response.data;
         if (userData.profileImage) {
@@ -46,7 +46,7 @@ const ProfileScreen = () => {
         const base64String = reader.result;
         try {
           const response = await axios.post(
-            `http://localhost:5000/api/auth/upload-profile-image`,
+            `${process.env.REACT_APP_BACKEND_URL}/api/auth/upload-profile-image`,
             {
               userId: user._id,
               image: base64String,

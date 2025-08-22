@@ -16,6 +16,9 @@ app.use(cors());
 
 // MongoDB Connection
 const MONGODB_URI = process.env.MONGODB_URI;
+app.get('/', (req, res) => {
+    res.send('✅ Server is running successfully!');
+});
 
 mongoose.connect(MONGODB_URI)
     .then(() => console.log('MongoDB connected successfully'))
