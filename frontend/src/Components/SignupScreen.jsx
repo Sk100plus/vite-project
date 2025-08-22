@@ -15,7 +15,7 @@ const SignupScreen = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/register`, {
+      const response = await axios.post(`${import.meta.env.REACT_APP_BACKEND_URL}/api/auth/register`, {
         fullName,
         phoneNumber,
         email,
